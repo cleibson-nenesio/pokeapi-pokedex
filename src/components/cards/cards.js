@@ -76,10 +76,6 @@ const Ul = styled.ul`
     align-items: center;
     gap: 15px;
     height: 100%;
-
-    @media(max-width: 425px) {
-        gap: 120px;
-    }
 `
 
 const Li = styled.li`
@@ -94,18 +90,19 @@ const Li = styled.li`
 
 const LinkPokemon = styled(Link)`
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
     text-decoration: none;
     border-radius: 15px;
     color: white;
     padding: 20px 40px;
 
-    @media(max-width: 375px) {
+    @media(max-width: 400px) {
+        padding: 20px 10px;
         justify-content: center;
-        flex-direction: column;
+        gap: 5px;
 
         div {
             margin-bottom: 10px;

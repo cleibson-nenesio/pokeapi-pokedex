@@ -124,6 +124,7 @@ const PokemonGeneralDetails = styled.div`
     justify-content: center;
     align-items: center;
     font-family: Arial, sans-serif;
+    max-width: 100%;
     padding: 40px 80px;
 
     @media(max-width: 768px) {
@@ -138,17 +139,16 @@ const PokemonCharacteristics = styled.div`
     background-color: #333;
     padding: 15px;
     border-radius: 15px;
+    gap: 10px;
     color: white;
-    width: 80%;
+    max-width: 80%;
     padding: 15px 30px;
 
     @media(max-width: 768px) {
         flex-direction: column;
-        font-size: 14px;
         height: 100%;
 
         > div {
-            border-bottom: 1px solid #c3c3c3;
             padding-bottom: 15px;
         }
     }
@@ -184,6 +184,7 @@ const Div = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 250px;
     gap: 13px;
     margin-bottom: 20px;
     text-transform: capitalize;
@@ -212,6 +213,7 @@ const DivMoves = styled.div`
     align-items: center;
     gap: 10px;
     font-size: 18px;
+    text-transform: capitalize;
 
     @media(max-width: 768px) {
         width: 300px;
@@ -229,6 +231,7 @@ const Moves = styled.div`
     overflow: scroll;
     overflow-x: hidden;
     box-shadow: inset 0px 0px 18px -8px rgba(0,0,0,0.75);
+    width: 200px;
 
     ::-webkit-scrollbar {
         width: 10px;

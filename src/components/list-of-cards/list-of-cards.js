@@ -23,6 +23,10 @@ const Section = styled.section`
     padding: 50px;
     background: url('https://rare-gallery.com/uploads/posts/4584932-8-bit-sky-clouds-pixels-landscape-artwork-pixel-art.png') center center no-repeat;
     background-attachment: fixed;
+
+    @media(max-width: 400px) {
+        padding: 20px;
+    }
 `
 
 const Button = styled.button`
