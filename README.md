@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+<h1>Pokedéx React.Js 🎴</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Status: Developed ✔
 
-## Available Scripts
+Este é o projeto de uma pokedéx usando dados da API [pokeapi](https://pokeapi.co/), criado para estudos da biblioteca React.JS
 
-In the project directory, you can run:
+<h2>Onde encontrar 📎</h2> 
 
-### `npm start`
+* O repositório do projeto pode ser encontrado no GitHub, através deste link: **[Repositório](https://github.com/cleibson-nenesio/pokeapi-pokedex/)** 📖
+* O deploy do projeto pode ser encontrado através deste  link **[Deploy do site](https://63a4cebe54bf0d1d285f1fa3--golden-basbousa-0eaa98.netlify.app)** 💻
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<h2>Features ✨</h2> 
 
-### `npm test`
+* Listagem de todos os pokémons
+* Alternador de modo claro/escuro
+* Filtragem de pokémons por tipo
+* Aba detalhada sobre cada pokémon
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h3>Listagem dos pokémons</h3>
 
-### `npm run build`
+![listagem-pokemons](https://user-images.githubusercontent.com/76183424/209245557-9d49e296-655a-4c7e-a98b-d574bcdd2fbc.gif)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<hr>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<h3>Alternador de modo claro/escuro</h3>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![alternador-modo](https://user-images.githubusercontent.com/76183424/209245868-ab9b200f-f3bd-4405-af84-b93f533fea84.gif)
 
-### `npm run eject`
+<hr>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<h3>Filtragem de pokémons por tipo</h3>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![filtragem-tipo-pokemon](https://user-images.githubusercontent.com/76183424/209246437-0ec84d49-2534-4bb6-8047-a8db0beb30ae.gif)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<hr>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<h3>Aba de detalhes sobre o Pokémon</h3>
 
-## Learn More
+![pokemon_details](https://user-images.githubusercontent.com/76183424/209247163-d6cabfdf-59dc-4a27-98e4-7cc70cc1bffa.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<hr>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<h2>Como baixar e rodar 🗺</h2>
 
-### Code Splitting
+Para baixar e rodar este projeto em sua máquina localmente, basta clonar o projeto, usando o comando git.
+```
+git clone https://github.com/cleibson-nenesio/pokeapi-pokedex.git
+```
+Após baixado os arquivos do repositório, abra-o com seu editor de código e instale os pacotes, usando o seguinte comando em seu terminal.
+```
+npm install
+```
+Logo após, o comando
+```
+npm start
+```
+E esperar que o projeto seja aberto em uma aba de seu navegador.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<hr>
 
-### Analyzing the Bundle Size
+<h2>Tecnologias Utilizadas 🛠</h2> 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* React.Js <br>
+* Javascript <br>
+* Styled-components <br>
+* React router dom <br>
+* Context API <br>
+* PokeAPI 
