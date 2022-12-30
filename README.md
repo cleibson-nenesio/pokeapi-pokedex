@@ -19,19 +19,22 @@ Este é o projeto de uma pokedéx usando dados da API [pokeapi](https://pokeapi.
 
 <h3>Listagem dos pokémons</h3>
 
-![listagem-pokemons](https://user-images.githubusercontent.com/76183424/209245557-9d49e296-655a-4c7e-a98b-d574bcdd2fbc.gif)
+![listagem-pokemon](https://user-images.githubusercontent.com/76183424/210092456-5b9ee6df-f175-4dbe-8fd1-ae22f07c84c7.gif)
+
 
 <hr>
 
 <h3>Alternador de modo claro/escuro</h3>
 
-![alternador-modo](https://user-images.githubusercontent.com/76183424/209245868-ab9b200f-f3bd-4405-af84-b93f533fea84.gif)
+![alternador-modo-claro-escuro](https://user-images.githubusercontent.com/76183424/210092676-ad825f82-50d7-4017-8baf-67e83679ba5e.gif)
+
 
 <hr>
 
 <h3>Filtragem de pokémons por tipo</h3>
 
-![filtragem-tipo-pokemon](https://user-images.githubusercontent.com/76183424/209246437-0ec84d49-2534-4bb6-8047-a8db0beb30ae.gif)
+![filtro-pokemon](https://user-images.githubusercontent.com/76183424/210093555-aa178402-254e-4296-9f97-dc1a7280db42.gif)
+
 
 <hr>
 
