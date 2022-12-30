@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { Header } from './components/header/header';
 import { AppRoutes } from './pages/routes';
 
 function App() {

@@ -1,15 +1,58 @@
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Card } from "../cards/cards"
 import styled from "styled-components"
+import { getPokemonsDetails } from '../../services/get-pokemon-details/get-pokemon-details'
+import { getFilteredPokemons } from "../../services/get-filtered-pokemons/get-filtered-pokemons"
+import { Loading } from "../loading/loading"
 
 export const ListOfCards = (props) => {
-    let [limit, setLimit] = useState(20)
+    const [pokemon, setPokemon] = useState({
+        data: []
+    })
+
+    const limitOfPokemons = useRef(20)
+
+    useEffect(() => {
+        const getPokemonsData = async () => {
+            if(props.filter !== 'types') {
+                const pokemonData = await getFilteredPokemons(props.filter)
+
+                setPokemon({
+                    data: pokemonData
+                })
+                return
+            }
+
+            const pokemonData = await getPokemonsDetails(limitOfPokemons.current)
+
+            setPokemon({
+                data: pokemonData
+            })
+        }
+
+        const options = {
+            treshold: 0.1,
+        }
+
+        const loadNewCards = new IntersectionObserver(entry => {
+            if(entry[0].time < 1000) return
+
+            if(entry[0].isIntersecting) {
+                limitOfPokemons.current += 20
+                getPokemonsData()
+            }
+        }, options)
+
+        loadNewCards.observe(document.querySelector('#new-cards'))
+
+        getPokemonsData()
+    }, [props.filter, limitOfPokemons])
 
     return(
         <>
             <Section>
-                <Card limit={limit} filter={props.filter}/>
-                <Button onClick={() => setLimit(limit + 10)} >Mostrar mais</Button>
+                <Card pokemon={pokemon.data}/>
+                <Loading />
             </Section>
         </>
     )
@@ -27,17 +70,4 @@ const Section = styled.section`
     @media(max-width: 400px) {
         padding: 20px;
     }
-`
-
-const Button = styled.button`
-    max-width: 300px;
-    align-self: center;
-    padding: 10px 60px;
-    border: none;
-    background-color: #b2e270;
-    font-weight: bold;
-    border-radius: 15px;
-    cursor: pointer;
-    margin-top: 30px;
-    outline: none;
 `

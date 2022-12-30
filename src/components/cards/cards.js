@@ -1,61 +1,29 @@
 import styled from "styled-components"
-import { useState, useEffect, useContext } from "react"
+import { useContext } from "react"
 import { Link } from "react-router-dom"
-import { getPokemonsDetails } from "../../services/get-pokemon-details/get-pokemon-details"
-import { getFilteredPokemons } from "../../services/get-filtered-pokemons/get-filtered-pokemons"
 import { ThemeContext } from "../../context/theme-context"
 
 export const Card = (props) => {
     const { theme } = useContext(ThemeContext)
 
-    const [card, setCard] = useState({
-        pokemonDetails: [],
-    })
-
-    useEffect(() => {
-        const createPokemonCard = async () => {
-            const pokemonArray = await getPokemonsDetails(props.limit)
-            setCard({
-                pokemonDetails: pokemonArray
-            })
-        }
-
-        if(props.filter !== 'types') {
-            const createFilteredPokemon = async () => {
-                const pokemonFiltered = await getFilteredPokemons(props.filter)
-                const button = document.getElementById('filter-button')
-                setCard({
-                    pokemonDetails: pokemonFiltered
-                })
-
-                button.innerText = 'Filter'
-                button.removeAttribute('disabled', '')
-            }
-
-            createFilteredPokemon()
-        }
-
-        createPokemonCard()
-    }, [props.limit, props.filter])
-
     return(
         <>
             <Ul>
-                {card.pokemonDetails.map((pokemon, index) => {
+                {props.pokemon.map((pokemon, index) => {
                     return(
-                        <Li key={index} style={{backgroundColor: theme.background, color: theme.color}}>
-                            <LinkPokemon to={`/pokemon/${pokemon.name}`} style={{backgroundColor: theme.background, color: theme.color}}>
+                        <Li key={index} theme={theme}>
+                            <LinkPokemon to={`/pokemon/${pokemon.name}`} theme={theme}>
                                 <DivForm>
-                                     {pokemon.sprites.versions['generation-v']['black-white']['animated']['front_default'] ? <img src={pokemon['sprites']['versions']['generation-v']['black-white']['animated']['front_default']} alt={pokemon.name}/> : <img src={pokemon.sprites.front_default} alt={pokemon.name}/>}
+                                    <img src={pokemon['sprites']['versions']['generation-v']['black-white']['animated']['front_default']} alt={pokemon.name}/>
                                     <p>{pokemon.name}</p>
 
                                     <PokemonTypes>
-                                        <p style={{backgroundColor: theme.color, color: theme.background}}>{pokemon.types[0].type.name}</p>
-                                        {pokemon.types[1] ? <p style={{backgroundColor: theme.color, color: theme.background}}>{pokemon.types[1].type.name}</p> : null}
+                                        <Type theme={theme}>{pokemon.types[0].type.name}</Type>
+                                        {pokemon.types[1] ? <Type theme={theme}>{pokemon.types[1].type.name}</Type> : null}
                                     </PokemonTypes>
                                 </DivForm>
 
-                                <DivInformation style={{backgroundColor: theme.background, color: theme.color}}>
+                                <DivInformation theme={theme}>
                                     <p>❤ {pokemon.stats[0].stat.name}: {pokemon.stats[0].base_stat}</p>
                                     <p>⚔ {pokemon.stats[1].stat.name}: {pokemon.stats[1].base_stat}</p>
                                     <p>🛡 {pokemon.stats[2].stat.name}: {pokemon.stats[2].base_stat}</p>
@@ -86,6 +54,9 @@ const Li = styled.li`
     justify-content: space-between;
     align-items: center;
     border-radius: 15px;
+    font-family: sans-serif;
+    background-color: ${props => props.theme.background};
+    color: ${props => props.theme.color};
 `
 
 const LinkPokemon = styled(Link)`
@@ -98,10 +69,11 @@ const LinkPokemon = styled(Link)`
     border-radius: 15px;
     color: white;
     padding: 20px 40px;
+    background-color: ${props => props.theme.background};
+    color: ${props => props.theme.color};
 
     @media(max-width: 400px) {
         padding: 20px 10px;
-        justify-content: center;
         gap: 5px;
 
         div {
@@ -115,6 +87,8 @@ const DivInformation = styled.div`
     flex-direction: column;
     gap: 5px;
     text-transform: capitalize;
+    background-color: ${props => props.theme.background};
+    color: ${props => props.theme.color};
 `
 
 const DivForm = styled.div`
@@ -138,15 +112,15 @@ const DivForm = styled.div`
 const PokemonTypes = styled.div`
     display: flex;
     gap: 10px;
+`
 
-    p {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 5px 10px;
-        background-color: white;
-        color: black;
-        border-radius: 15px;
-        font-size: 18px;
-    }
+const Type = styled.p`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 18px;
+    background-color: ${props => props.theme.color};
+    color: ${props => props.theme.background};
 `

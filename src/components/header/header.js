@@ -6,7 +6,7 @@ export const Header = (props) => {
     const { theme } = useContext(ThemeContext)
 
     return(
-        <Head style={{backgroundColor: theme.background, color: theme.color}}>
+        <Head theme={theme}>
             <Logo>
                 <Image src={require('./images/logo.png')} alt='logo'/>
                 <h1>Pokedéx Search</h1>
@@ -26,8 +26,9 @@ const Head = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #333;
-    color: white;   
+    font-family: sans-serif;
+    background-color: ${props => props.theme.background};
+    color: ${props => props.theme.color};   
 
     @media(max-width: 425px) {
         h1 {
