@@ -7,7 +7,7 @@ Este é o projeto de uma pokedéx usando dados da API [pokeapi](https://pokeapi.
 <h2>Onde encontrar 📎</h2> 
 
 * O repositório do projeto pode ser encontrado no GitHub, através deste link: **[Repositório](https://github.com/cleibson-nenesio/pokeapi-pokedex/)** 📖
-* O deploy do projeto pode ser encontrado através deste  link **[Deploy do site](https://main--first-project-react-pokedex.netlify.app/)** 💻
+* O deploy do projeto pode ser encontrado através deste  link **[Deploy do site](https://pokeapi-pokedex.vercel.app/)** 💻
 
 
 <h2>Features ✨</h2> 
